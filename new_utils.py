@@ -15,7 +15,10 @@ def arch_summary(arch):
         print(f'({i}) {l.__class__.__name__:<12}: {n_layers:<4}layers (total: {tot})')
 
 
-
+"""
+The file 'run_logs.txt' is saved each time te training is completed. 
+Contains information about dataset and other variables.
+"""
 #read the first line to get the run number from log file
 def get_run_num():
     with open('run_logs.txt', 'r') as rl:
@@ -36,6 +39,11 @@ def increase_run_number():
     with open('run_logs.txt', 'w') as rl:
         rl.write(''.join(all_lines))
 
+        
+"""
+Should we chose to use an ensemble of word embeddings.
+Probably not suppprted in this version.
+"""
 def get_ensemble_embeddings(emb_folder, word_map):
         embedding_list=list()
         for i,file in enumerate(os.listdir(emb_folder)):
@@ -45,6 +53,10 @@ def get_ensemble_embeddings(emb_folder, word_map):
         return total_embeddings, total_embeddings.shape[1]
 
 
+"""
+COCOAPI need the captions to be saved in a particular format.
+Hence the code below.
+"""
 def save_captions_mscoco_format(word_map_file,references,hypotheses,image_names, data_name):
     with open(word_map_file, 'r') as word_map:
         wm=json.load(word_map)
