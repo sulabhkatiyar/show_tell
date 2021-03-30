@@ -42,8 +42,6 @@ vocab_size = len(word_map)
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
 
-choice=0
-embeddings_ensemble_available=False
 
 #Arguments to main()
 parser = argparse.ArgumentParser(description = 'Evaluation of IC model')
@@ -59,17 +57,15 @@ def evaluate(beam_size):
     :return: BLEU-4 score
     """
     #All global parameters here
-    global captions_dump, data_name, choice, embeddings_ensemble_available
+    global captions_dump, data_name
     
+    # To count the number of empty generated captions
     empty_hypo = 0
     
     # DataLoader
     loader = torch.utils.data.DataLoader(
         CaptionDataset(data_folder, data_name, 'TEST', transform=transforms.Compose([normalize])),
         batch_size=1, shuffle=True, num_workers=1, pin_memory=True)
-
-    # TODO: Batched Beam Search
-    # Therefore, do not use a batch_size greater than 1 - IMPORTANT!
 
     # Lists to store references (true captions), and hypothesis (prediction) for each image
     # If for n images, we have n hypotheses, and references a, b, c... for each image, we need -
