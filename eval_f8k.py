@@ -13,7 +13,7 @@ import argparse
 
 
 # Parameters
-data_folder = 'path_to_dat_folder'  # folder with data files saved by create_input_files.py, i.e. 'output_folder'
+data_folder = 'path_to_data_folder'  # folder with data files saved by create_input_files.py, i.e. 'output_folder'
 data_name = 'flickr8k_5_cap_per_img_5_min_word_freq'   # base name shared by data files
 checkpoint = 'BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar'  # model checkpoint
 word_map_file = data_folder + '/WORDMAP_flickr8k_5_cap_per_img_5_min_word_freq.json'  # word map, ensure it's the same the data was encoded with and the model was trained with
