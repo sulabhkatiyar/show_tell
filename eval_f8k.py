@@ -77,10 +77,15 @@ def evaluate(beam_size):
     # Create a list of image names in same order as images
     image_names = list()
 
+    all_image_names = list()
+    
     # For each image
     for i, (image, caps, caplens, allcaps, image_name) in enumerate(
             tqdm(loader, desc="EVALUATING AT BEAM SIZE " + str(beam_size))):
 
+        if image_name in all_image_names:
+            continue
+            
         k = beam_size
 
         # Move to GPU device, if available
@@ -186,6 +191,8 @@ def evaluate(beam_size):
 
         # Image names list
         image_names.append(image_name)
+        
+        all_image_names.append(image_name)
 
         assert len(references) == len(hypotheses) == len(image_names)
 
