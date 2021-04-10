@@ -8,4 +8,9 @@ Thus, there are some differences in this implementation as compared to the metho
 1. In the paper, authors use GoogLeNet CNN as encoder for image feature extraction but I have used VGG-16 as encoder.
 1. I have not used model ensembles in this implementation. The authors determine that using model ensembles helps them enhance the performance by around 1-2 points on most BLEU metric.
 1. I have not used batch normalization for inputs. 
-1. Beam width of 3 has been used for inference. I have observed that, as compared to beam width of 20 which has been used in this paper, beam width of 3 provides better results.
+1. Beam width of 3 has been used for inference. I have observed that, as compared to beam width of 20 which has been used in this paper, beam width of 3 provides better results. Here, I have quoted the results with all beam sizes, for the sake of completeness.
+
+
+|Method | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4|
+|---|---|---|---|---|
+|Vinyals _et_ _al_ [1] | | | |
