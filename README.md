@@ -11,6 +11,8 @@ Thus, there are some differences in this implementation as compared to the metho
 1. Beam width of 3 has been used for inference. I have observed that, as compared to beam width of 20 which has been used in this paper, beam width of 3 provides better results. Here, I have quoted the results with all beam sizes, for the sake of completeness.
 
 
-|Method | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4|
-|---|---|---|---|---|
-|Vinyals _et_ _al_ [1] | | | |
+|Method |Beam-Size | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
+|---|---|---|---|---|---|---|---|---|---|
+|Vinyals _et_ _al_ [1] | 20 |  |  | | | | | |
+|Our implementation | 1 | 0.561 | 0.373 | 0.245 | 0.162| 0.174 | 0.323 | 0.410 | 0.114 |
+
