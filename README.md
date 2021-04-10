@@ -12,7 +12,7 @@ Thus, there are some differences in this implementation as compared to the metho
 
 **For Flickr30k dataset:**
 
-|Results |Beam-Size | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
+|Result |Beam-Size | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
 |---|---|---|---|---|---|---|---|---|---|
 |Paper | 20 |  |  | | | | | |
 |Our | 1 | 0.561 | 0.373 | 0.245 | 0.162 | 0.174 | 0.323 | 0.114 | 0.410 |
