@@ -22,4 +22,19 @@ Thus, there are some differences in this implementation as compared to the metho
 |Our | 15 | 0.590 | 0.396 | 0.262 | 0.175 | 0.160 | 0.352 | 0.106 | 0.405 |
 |Our | 20 | 0.581 | 0.390 | 0.257 | 0.170 | 0.157 | 0.347 | 0.103 | 0.401 |
 
+**For MSCOCO dataset:**
+
+|Result |Beam | BLEU-1 | BLEU-2 | BLEU-3| BLEU-4| METEOR | CIDEr | SPICE | ROUGE-L |
+|---|---|---|---|---|---|---|---|---|---|
+|Paper |  |  |  |  |  |  |  |  |
+|Our | 1 | 0.670 | 0.487 | 0.344 | 0.244 |  |  |  |  |
+|Our | 3 | 0.677 | 0.497 | 0.364 | 0.270 |  |  |  |  |
+
+
+
+The BLEU scores are 0.6706550835938225, 0.49190384936563414, 0.3608563774780518, 0.26851887441589206.The beam_size was 5.
+The BLEU scores are 0.6623884069018237, 0.4838208582803625, 0.35399112652157766, 0.2637625748087203.The beam_size was 10.
+The BLEU scores are 0.6574842336293149, 0.47854564809465855, 0.3494266073429842, 0.2604978054708325.The beam_size was 15.
+The BLEU scores are 0.6553794319516962, 0.4764382019607749, 0.3473617206189104, 0.258826522877868.The beam_size was 20.
+
 
