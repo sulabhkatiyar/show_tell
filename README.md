@@ -8,12 +8,14 @@ In this work, I have implemented Encoder-Decoder based Image Captioning method. 
 Thus, there are some differences in this implementation as compared to the method used in the paper. These are as follows:
 1. In the paper (Show and tell: A neural image caption generator), authors use GoogLeNet CNN as encoder for image feature extraction but I have used VGG-16 as encoder.
 1. I have not used model ensembles in this implementation. The authors determine that using model ensembles helps them enhance the performance by around 1-2 points on most BLEU metric.
-1. I have not used batch normalization for inputs. Using batch normalization for VGG-16 CNN provides inferior results.
-1. Beam width of 3 has been used for inference. I have observed that, as compared to beam width of 20 which has been used in this paper, beam width of 3 provides better results. Here, I have quoted the results with all beam sizes, for the sake of completeness.
+1. I have not used batch normalization for inputs. I have observed that, using batch normalization for VGG-16 CNN provides inferior results.
+1. Beam width of 3 has been used for inference. I have observed that, as compared to beam width of 20 which has been used in this paper, beam width of 3 provides better results. While using our method, beam width of 20 also provides results comparable to the results in the paper. Here, I have quoted the results with all beam sizes, for the sake of completeness.
 
 All the results are not available from the paper. Hence, some results have been quoted from the paper: [Show, Attend and Tell: Neural Image Caption
 Generation with Visual Attention](http://proceedings.mlr.press/v37/xuc15) where the authors obtain the results after personal corespondence with the authors of _Show and tell: A neural image caption generator_.
 
+As we can observe, the results for Flickr8k and Flickr30k datasets are inferior, for most of the metrics, as compared to the results in the paper: _Show and tell: A neural image caption generator_. This seems to be due to use of model ensembles in the paper. For MSCOCO, our method provides slightly better results for most metrics.
+One important observation is that our method provides lower values on all evaluation metrics for Flickr30k dataset as compared to Flickr8k dataset even though the former contains more training samples. We have observed the same for other methods proposed in the literature as well (such as the Visual Attention mechanism proposed in _Show, Attend and Tell: Neural Image Caption Generation with Visual Attention_).
 
 **For Flickr8k dataset:**
 
