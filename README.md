@@ -4,6 +4,8 @@
 
 *Note:* This is a work in progress
 
+####Description:
+
 In this work, I have implemented Encoder-Decoder based Image Captioning method. This method is similar to the method used in the paper: [Show and tell: A neural image caption generator](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Vinyals_Show_and_Tell_2015_CVPR_paper.html). This work here has been used as baseline in some of my research works where I have compared the performance of this method with other methods in the literature. Hence, to undertake a fair comparison, I have implemented this method with similar hyperparameter settings as other methods that have been studied or proposed by me. 
 Thus, there are some differences in this implementation as compared to the method used in the paper. These are as follows:
 1. In the paper (Show and tell: A neural image caption generator), authors use GoogLeNet CNN as encoder for image feature extraction but I have used VGG-16 as encoder.
@@ -54,3 +56,11 @@ One important observation is that our method provides lower values on all evalua
 |Our | 15 | 0.657 | 0.479 | 0.349 | 0.260 | 0.222 | 0.791 | 0.152 | 0.486 |
 |Our | 20 | 0.655 | 0.476 | 0.347 | 0.259 | 0.221 | 0.788 | 0.151 | 0.484 |
 
+
+####Prerequisites:
+
+####Execution:
+1. First set the path to Flickr8k/Flickr30k/MSCOCO data folders in create_input_files_dataname.py file ('dataname' replaced by f8k/f30k/coco).
+1. Create processed dataset by running: python create_input_files_dataname.py
+1. Run python train_dataname.py
+1. To evaluate: python eval_dataname.py beamsize (eg.: python train_f8k.py 20)
