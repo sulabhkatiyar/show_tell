@@ -63,8 +63,11 @@ One important observation is that our method provides lower values on all evalua
 1. First set the path to Flickr8k/Flickr30k/MSCOCO data folders in create_input_files_dataname.py file ('dataname' replaced by f8k/f30k/coco).
 1. Create processed dataset by running: 
 > python create_input_files_dataname.py
+
 1. To train the model:
 > python train_dataname.py
+
 1. To evaluate: 
 > python eval_dataname.py beamsize 
+
 (eg.: python train_f8k.py 20)
