@@ -58,6 +58,13 @@ One important observation is that our method provides lower values on all evalua
 
 
 #### Prerequisites:
+1. This code has been tested on python 3.6.9 but should word on all python versions > 3.6.
+2. Pytorch v1.5.0
+3. CUDA v10.1
+4. Torchvision v0.6.0
+5. Numpy v.1.15.0
+6. pretrainedmodels v0.7.4 (Install from [source](https://github.com/Cadene/pretrained-models.pytorch.git)). (I think all versions will work but I have listed here for the sake of completeness.)
+
 
 #### Execution:
 1. First set the path to Flickr8k/Flickr30k/MSCOCO data folders in create_input_files_dataname.py file ('dataname' replaced by f8k/f30k/coco).
