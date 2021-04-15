@@ -42,19 +42,14 @@ class Encoder(nn.Module):
         
         if encoder_choice==0: 
             x = self.features_nopool(images)
-            # print(x.shape)
             x_pool = self.features_pool(x)
-            # print(x_pool.shape)
             x_feat = x_pool.view(x_pool.size(0), -1)
-            # print(x_feat.shape)
             y = self.classifier(x_feat)
-            # print(y.shape)
             return y.unsqueeze(1).unsqueeze(1)
             
         out = self.adaptive_pool(out)  # (batch_size, 512, encoded_image_size, encoded_image_size)
         out = out.permute(0, 2, 3, 1)  # (batch_size, encoded_image_size, encoded_image_size, 512)
-        # if type(images) == list:
-        #     out = self.activation(self.combine(out))
+
         return out
 
     def fine_tune(self, fine_tune=True):
