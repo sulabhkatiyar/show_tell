@@ -2,7 +2,7 @@ from utils import create_input_files
 
 """
 To create files that contain all images stored in h5py format and captions stored in json files.
-Minimum word frequencies to be used as cut-off for removing rare words to be specifiied here.
+Minimum word frequencies to be used as cut-off for removing rare words to be specified here.
 """
 
 if __name__ == '__main__':
