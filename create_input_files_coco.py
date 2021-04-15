@@ -12,4 +12,4 @@ if __name__ == '__main__':
                        captions_per_image=5,
                        min_word_freq=5,
                        output_folder='folder_for_processed_data',
-                       max_len=40)
+                       max_len=50)
