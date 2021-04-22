@@ -92,16 +92,14 @@ def evaluate(beam_size):
         image = image.to(device)  # (1, 3, 256, 256)
 
         # Encode
-        encoder_out = encoder(image)  # (1, enc_image_size, enc_image_size, encoder_dim)
+        encoder_out = encoder(image)  # (1, encoder_dim)
         enc_image_size = encoder_out.size(1)
-        encoder_dim = encoder_out.size(3)
+        encoder_dim = encoder_out.size(-1)
 
-        # Flatten encoding
-        encoder_out = encoder_out.view(1, -1, encoder_dim)  # (1, num_pixels, encoder_dim)
-        num_pixels = encoder_out.size(1)
+        encoder_out = encoder_out.view(1, encoder_dim)  # (1, encoder_dim)
 
         # We'll treat the problem as having a batch size of k
-        encoder_out = encoder_out.expand(k, num_pixels, encoder_dim)  # (k, num_pixels, encoder_dim)
+        encoder_out = encoder_out.expand(k, encoder_dim)  # (k, encoder_dim)
 
         # Tensor to store top k previous words at each step; now they're just <start>
         k_prev_words = torch.LongTensor([[word_map['<start>']]] * k).to(device)  # (k, 1)
@@ -158,9 +156,8 @@ def evaluate(beam_size):
             if k == 0:
                 break
             seqs = seqs[incomplete_inds]
-            if choice==0:
-                h = h[prev_word_inds[incomplete_inds]]
-                c = c[prev_word_inds[incomplete_inds]]
+            h = h[prev_word_inds[incomplete_inds]]
+            c = c[prev_word_inds[incomplete_inds]]
 
             encoder_out = encoder_out[prev_word_inds[incomplete_inds]]
             top_k_scores = top_k_scores[incomplete_inds].unsqueeze(1)
