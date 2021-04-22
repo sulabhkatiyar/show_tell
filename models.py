@@ -45,7 +45,7 @@ class Encoder(nn.Module):
             x_pool = self.features_pool(x)
             x_feat = x_pool.view(x_pool.size(0), -1)
             y = self.classifier(x_feat)
-            return y.unsqueeze(1).unsqueeze(1)
+            return y
             
         out = self.adaptive_pool(out)  # (batch_size, 512, encoded_image_size, encoded_image_size)
         out = out.permute(0, 2, 3, 1)  # (batch_size, encoded_image_size, encoded_image_size, 512)
